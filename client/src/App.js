@@ -2,25 +2,29 @@ import './App.css';
 
 import { Link, Route, Routes, Navigate } from 'react-router-dom';
 
-import { NotFound } from './components/NotFound';
+import { NotFound } from './views/NotFound';
+import { AllProducts } from './views/AllProducts';
+import { OneProduct } from './views/OneProduct';
+import { EditProduct } from './views/EditProduct';
+import { AddProduct } from './components/AddProduct';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container">
+      <nav className="navbar navbar-expand-lg navbar-light bg-light sticky-top justify-content-center mb-4">
+        <h1>Product Manager</h1>
+      </nav>
+      <AddProduct/>
+      <hr />
+      <Routes>
+        <Route path="/" element={<Navigate to='/products' replace />} />
+        {/* <Route path="/products" element={<AddProduct />} /> */}
+        <Route path="/products" element={<AllProducts />} />
+        <Route path="/products/:id" element={<OneProduct />} />
+        <Route path="/products/:id/edit" element={<EditProduct />} />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+      
     </div>
   );
 }
