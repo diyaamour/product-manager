@@ -10,7 +10,7 @@ export const NotFound = () => {
             <div className='w-40'>
                 <h2 className="not-found-title">OOPS! PAGE NOT FOUND.</h2>
                 <p className="not-found-message">
-                    You must have picked the wrong door because I haven't been able to lay my eye on the page you've been searchong for.
+                    You must have picked the wrong door because I haven't been able to lay my eye on the page you've been searching for.
                 </p>
                 <Link className="btn btn-primary" to="/">BACK TO HOME</Link>
             </div>
