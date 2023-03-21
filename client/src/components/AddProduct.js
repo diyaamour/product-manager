@@ -1,6 +1,7 @@
 import { useState } from "react";
 
 import { useNavigate } from "react-router-dom";
+
 import axios from "axios";
 
 export const AddProduct = (props) => {
@@ -14,7 +15,7 @@ export const AddProduct = (props) => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        
+
         const newProduct = {
             title,
             price,
@@ -25,13 +26,17 @@ export const AddProduct = (props) => {
             .post("http://localhost:8000/api/products", newProduct)
             .then((res) => {
                 console.log(res.data);
-                navigate("/products");
+                setTitle("");
+                setPrice("");
+                setDescription("");
+                props.addProduct(res.data);
+                // navigate("/products");
             })
             .catch((err) => {
                 console.log(err);
                 setErrors(err);
             });
-        }
+    }
 
     return (
         <div className="w-50 p-4 rounded mx-auto shadow">
@@ -44,8 +49,9 @@ export const AddProduct = (props) => {
                     <input onChange={(e) => {
                         setTitle(e.target.value);
                     }}
-                    type="text"
-                    className="form-control"
+                        type="text"
+                        className="form-control"
+                        value={title}
                     />
                 </div>
                 <div className="form-group">
@@ -53,8 +59,9 @@ export const AddProduct = (props) => {
                     <input onChange={(e) => {
                         setPrice(e.target.value);
                     }}
-                    type="number"
-                    className="form-control"
+                        type="number"
+                        className="form-control"
+                        value={price}
                     />
                 </div>
                 <div className="form-group">
@@ -62,8 +69,9 @@ export const AddProduct = (props) => {
                     <input onChange={(e) => {
                         setDescription(e.target.value);
                     }}
-                    type="text"
-                    className="form-control"
+                        type="text"
+                        className="form-control"
+                        value={description}
                     />
                 </div>
                 <button className="btn btn-sm btn-outline-success mt-2">Add Product ➕</button>

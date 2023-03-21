@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams, useNavigate, Link} from "react-router-dom";
 
 export const OneProduct = (props) => {
 
@@ -45,10 +45,15 @@ export const OneProduct = (props) => {
 
     return (
         <div className="w-50 mx-auto text-center">
+            <nav className="navbar navbar-expand-lg navbar-light bg-light sticky-top justify-content-center mb-4">
+                <h1 ><Link to='/' className="text-decoration-none" style={{color: 'black'}}>Product Manager</Link> </h1>
+            </nav>
             <div className="shadow mb-4 rounded border p-4">
+                
                 <h1>{title}</h1>
-                <p>{description}</p>
-                <p>${price}</p>
+                <p>Price: ${price}</p>
+                <p>Description: {description}</p>
+                
                 <button onClick={handleDelete}
                     className="btn btn-sm btn-outline-danger mx-1"
                 >

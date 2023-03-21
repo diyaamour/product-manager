@@ -1,8 +1,3 @@
-
-// export const NotFound = () => {
-//     return <h1>Page not found.</h1>;
-// }
-
 import React from 'react';
 import { Link } from 'react-router-dom';
 
@@ -19,7 +14,6 @@ export const NotFound = () => {
                 </p>
                 <Link className="btn btn-primary" to="/">BACK TO HOME</Link>
             </div>
-
         </div>
     );
 };
