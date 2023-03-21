@@ -1,22 +1,26 @@
 const mongoose = require("mongoose");
 
-const JokeSchema = new mongoose.Schema(
+const ProductSchema = new mongoose.Schema(
   {
-    setup: {
+    title: {
       type: String,
       required: [true, "{PATH} is required."],
-      minlength: [10, "{PATH} must be at least {MINLENGTH} characters."],
+      minlength: [2, "{PATH} must be at least {MINLENGTH} characters."],
     },
-    punchline: {
+    price: {
+      type: Number,
+      required: [true, "{PATH} is required."],
+    },
+    description: {
       type: String,
       required: [true, "{PATH} is required."],
-      minlength: [3, "{PATH} must be at least {MINLENGTH} characters."],
+      minlength: [5, "{PATH} must be at least {MINLENGTH} characters."],
     },
   },
   { timestamps: true } // adds createdAt and updatedAt.
 );
 
-const Joke = mongoose.model("Joke", JokeSchema);
+const Product = mongoose.model("Product", ProductSchema);
 
-console.log("Joke model created");
-module.exports = { Joke: Joke };
+console.log("Product model created");
+module.exports = { Product: Product };
