@@ -39,7 +39,7 @@ export const AddProduct = (props) => {
     }
 
     return (
-        <div className="w-50 p-4 rounded mx-auto shadow">
+        <div className="w-55 p-4 rounded mx-auto shadow">
             <h3 className="text-center">
                 Add a new product
             </h3>
