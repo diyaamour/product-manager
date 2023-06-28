@@ -59,7 +59,6 @@ export const AllProducts = (props) => {
                             </h2>
                             <p>${price}</p>
                             <p>{description}</p>
-
                             <div>
                                 <button onClick={(event) => deleteProduct(_id)}
                                 className="btn btn-sm btn-outline-danger mx-1"

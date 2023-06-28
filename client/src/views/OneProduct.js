@@ -53,7 +53,6 @@ export const OneProduct = (props) => {
                 <h1>{title}</h1>
                 <p>Price: ${price}</p>
                 <p>Description: {description}</p>
-                
                 <button onClick={handleDelete}
                     className="btn btn-sm btn-outline-danger mx-1"
                 >
