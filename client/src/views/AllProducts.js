@@ -46,7 +46,8 @@ export const AllProducts = (props) => {
                     <h1>Product Manager</h1>
                 </nav>
                 <AddProduct addProduct = {addProduct}/>
-                <hr />
+                <hr/>
+
                 <h1>All Products</h1>
 
                 {products.map((product) => {
@@ -57,12 +58,14 @@ export const AllProducts = (props) => {
                             <h2>
                                 <Link to={`/products/${_id}`}>{title}</Link>
                             </h2>
+
                             <p>${price}</p>
+
                             <p>{description}</p>
+
                             <div>
                                 <button onClick={(event) => deleteProduct(_id)}
-                                className="btn btn-sm btn-outline-danger mx-1"
-                                >
+                                className="btn btn-sm btn-outline-danger mx-1">
                                     Delete
                                 </button>
                                 <Link to={`/products/${_id}/edit`} className="btn btn-sm btn-outline-primary mx-1">Edit</Link>
