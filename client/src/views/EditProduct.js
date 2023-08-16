@@ -94,6 +94,7 @@ export const EditProduct = (props) => {
                 </div>
 
                 <button className="btn btn-sm btn-outline-success mt-2">Submit</button>
+                
             </form>
         </div>
     )
