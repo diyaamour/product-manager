@@ -54,8 +54,7 @@ export const OneProduct = (props) => {
                 <p>Price: ${price}</p>
                 <p>Description: {description}</p>
                 <button onClick={handleDelete}
-                    className="btn btn-sm btn-outline-danger mx-1"
-                >
+                    className="btn btn-sm btn-outline-danger mx-1">
                     Delete
                 </button>
             </div>
