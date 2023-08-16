@@ -28,6 +28,7 @@ export const AllProducts = (props) => {
             .then((res) => {
                 // const filteredProducts = products.filter((product) => product.id !== id);
                 // setProducts(filteredProducts);
+                
                 setDeletedProductId(id);
             })
             .catch((err) => {
